@@ -1,5 +1,33 @@
 import React from 'react';
 
-export default function StarRating() {
-  return <div>Star</div>;
+const containerStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '16px',
+  backgroundColor: 'grey',
+};
+
+const starContainerStyle = {
+  display: 'flex',
+  gap: '4px',
+  backgroundColor: 'green',
+};
+
+const textStyle = {
+  lineHeight: '1',
+  margin: '0',
+  backgroundColor: 'blue',
+};
+
+export default function StarRating({ maxRating = 5 }) {
+  return (
+    <div style={containerStyle}>
+      <div style={starContainerStyle}>
+        {Array.from({ length: maxRating }, (_, i) => (
+          <span key={i}>S{i + 1}</span>
+        ))}
+      </div>
+      <p style={textStyle}>10</p>
+    </div>
+  );
 }
