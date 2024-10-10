@@ -50,12 +50,14 @@ const tempWatchedData = [
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
+// const KEY = '39d44eb9&s';
+
 export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
   const [watched, setWatched] = useState(tempWatchedData);
 
   return (
-    <>
+    <React.Fragment>
       <Navbar>
         <Search />
         <NumResults movies={movies} />
@@ -69,7 +71,7 @@ export default function App() {
           <WatchedMovieList watched={watched} />
         </Box>
       </Main>
-    </>
+    </React.Fragment>
   );
 }
 
